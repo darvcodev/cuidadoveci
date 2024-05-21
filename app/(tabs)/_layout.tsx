@@ -35,6 +35,7 @@ export default function TabLayout() {
         name="mapa"
         options={{
           title: "Mapa",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="map-marker" color={color} />
           ),
