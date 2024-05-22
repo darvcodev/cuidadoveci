@@ -85,7 +85,7 @@ export default function Onboard({ onDone }: { onDone: () => void }) {
                   source={require("@/assets/animations/Maps.json")}
                   autoPlay
                   loop
-                  style={{ width: 200, height: 200 }}
+                  style={{ width: 250, height: 250 }}
                 />
               </View>
             ),
@@ -101,7 +101,7 @@ export default function Onboard({ onDone }: { onDone: () => void }) {
                   source={require("@/assets/animations/Chat.json")}
                   autoPlay
                   loop
-                  style={{ width: 300, height: 300 }}
+                  style={{ width: 350, height: 350 }}
                 />
               </View>
             ),
