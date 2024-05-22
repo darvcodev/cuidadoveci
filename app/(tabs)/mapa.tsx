@@ -4,8 +4,8 @@ import { StyleSheet, View } from "react-native";
 
 export default function TabMapaScreen() {
   const initialRegion = {
-    latitude: 19.4326,
-    longitude: -99.1332,
+    latitude: 4.6097,
+    longitude: -74.0817,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   };

@@ -1,15 +1,15 @@
 import React from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Feather } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import Colors from "@/constants/Colors";
 import { useColorScheme } from "@/components/useColorScheme";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>["name"];
+  name: React.ComponentProps<typeof Feather>["name"];
   color: string;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  return <Feather size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
 export default function TabLayout() {
@@ -27,7 +27,7 @@ export default function TabLayout() {
         options={{
           title: "Alarma",
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="warning" color={color} />
+            <TabBarIcon name="alert-triangle" color={color} />
           ),
         }}
       />
@@ -37,16 +37,16 @@ export default function TabLayout() {
           title: "Mapa",
           headerShown: false,
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="map-marker" color={color} />
+            <TabBarIcon name="map-pin" color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="chat"
         options={{
-          title: "Chat",
+          title: "ChatBot",
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="comments" color={color} />
+            <TabBarIcon name="message-square" color={color} />
           ),
         }}
       />
