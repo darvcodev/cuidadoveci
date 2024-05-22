@@ -1,11 +1,6 @@
+import { Text, View } from "@/components/Themed";
 import LottieView from "lottie-react-native";
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  Linking,
-} from "react-native";
+import { StyleSheet, TouchableOpacity, Linking } from "react-native";
 
 export default function TabIndexScreen() {
   const reportarIncidente = () => {
@@ -44,7 +39,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
-    backgroundColor: "#fff",
   },
   titulo: {
     fontSize: 20,
