@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import { Text, View } from "@/components/Themed";
 import { StyleSheet } from "react-native";
@@ -35,12 +35,14 @@ export default function TabMapaScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={{ flex: 1 }}>
       <MapView
-        style={styles.map}
+        style={StyleSheet.absoluteFillObject}
         initialRegion={initialRegion}
+        // provider={PROVIDER_GOOGLE}
         showsUserLocation
         showsMyLocationButton
+        showsCompass
       >
         {markers.map((marker, index) => (
           <Marker
@@ -61,7 +63,10 @@ export default function TabMapaScreen() {
         >
           <BottomSheetView style={styles.contentContainer}>
             <Text style={styles.titulo}>Incidente</Text>
-            <Text style={styles.subtitulo}>Hurto a mano armada, indican que hay un grupo de personas armadas en el sector.</Text>
+            <Text style={styles.subtitulo}>
+              Hurto a mano armada, indican que hay un grupo de personas armadas
+              en el sector.
+            </Text>
           </BottomSheetView>
         </BottomSheet>
       )}
@@ -70,9 +75,6 @@ export default function TabMapaScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   titulo: {
     fontSize: 20,
     fontWeight: "bold",
@@ -84,9 +86,5 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     padding: 20,
-  },
-  map: {
-    width: "100%",
-    height: "100%",
   },
 });
