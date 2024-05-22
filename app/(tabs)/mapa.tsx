@@ -39,7 +39,6 @@ export default function TabMapaScreen() {
       <MapView
         style={StyleSheet.absoluteFillObject}
         initialRegion={initialRegion}
-        // provider={PROVIDER_GOOGLE}
         showsUserLocation
         showsMyLocationButton
         showsCompass
