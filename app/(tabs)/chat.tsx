@@ -1,7 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { View } from "react-native";
-import { Bubble, GiftedChat, IMessage } from "react-native-gifted-chat";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { GiftedChat, IMessage } from "react-native-gifted-chat";
 
 export default function TabChatScreen() {
   const [messages, setMessages] = useState<Array<IMessage>>([]);
@@ -32,7 +30,7 @@ export default function TabChatScreen() {
       setTimeout(() => {
         const responseMessage = {
           _id: Math.round(Math.random() * 1000000).toString(),
-          text: "Gracias por tu mensaje. Estoy aquí para ayudarte.",
+          text: "Dame la dirección del incidente",
           createdAt: new Date(),
           user: {
             _id: 2,
@@ -49,30 +47,16 @@ export default function TabChatScreen() {
   }, []);
 
   return (
-    <View style={{ flex: 1 }}>
-      <GiftedChat
-        renderBubble={(props) => {
-          return (
-            <Bubble
-              {...props}
-              wrapperStyle={{
-                left: {
-                  backgroundColor: "#f0f0f0",
-                },
-                right: {
-                  backgroundColor: "#006FFD",
-                },
-              }}
-            />
-          );
-        }}
-        placeholder="Escribe un mensaje..."
-        messages={messages}
-        onSend={(newMessages: IMessage[]) => onSend(newMessages)}
-        user={{
-          _id: 1,
-        }}
-      />
-    </View>
+    <GiftedChat
+      messages={messages}
+      onSend={(newMessages: IMessage[]) => onSend(newMessages)}
+      placeholder="Escribe un mensaje..."
+      user={{
+        _id: 1,
+        name: "Usuario",
+        avatar:
+          "https://img.freepik.com/vector-gratis/chatbot-mensaje-chat-vectorart_78370-4104.jpg",
+      }}
+    />
   );
 }
